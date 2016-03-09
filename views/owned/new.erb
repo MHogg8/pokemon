@@ -1,0 +1,28 @@
+<div class="content">
+
+  <h2>Assign Pokemon a Trainer</h2>
+
+  <form action="/ownedpokemon" method="post">
+
+      Choose a Trainer
+      <select>
+       <% @trainers.each do |trainer| %>
+        <option name='trainer_id' value='<% trainer.id %>'><%= trainer.name %></option>
+      <% end %>
+      </select>
+
+      Choose a Pokemon
+      <select>
+       <% @pokemon.each do |pokemon| %>
+        <option name='pokemon_id' value = '<% pokemon.id %>'><%= pokemon.name %></option>
+      <% end %>
+      </select>
+  
+    <input type='submit' value="Assign">
+  </form>
+
+  <br>
+  <br>
+  <a href="/">Back</a>
+
+</div>
